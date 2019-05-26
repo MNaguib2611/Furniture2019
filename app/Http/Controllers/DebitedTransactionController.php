@@ -21,7 +21,6 @@ class DebitedTransactionController extends Controller
         foreach ( $debitedTransactions as $debitedTransaction) {
                 $totalAmount +=(int)$debitedTransaction->amount;
         }
-        dd($totalAmount);
         return view('debited-transactions',compact('debitedTransactions','transactionTypes','totalAmount'));
     }
 

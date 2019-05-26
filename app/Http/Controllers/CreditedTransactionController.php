@@ -15,10 +15,8 @@ class CreditedTransactionController extends Controller
      */
     public function index()
     {
-        // dd(CreditedTransaction::first()->transactionType_id);
-        $creditedTransactions = CreditedTransaction::with('transactionType')->get();
-        // dd($creditedTransactions);
-        // dd( $creditedTransactions->first()->transactionType->name);
+
+        $creditedTransactions = CreditedTransaction::paginate(10);
         $transactionTypes    = TransactionTypes ::all();
         return view('credited-transactions',compact('creditedTransactions','transactionTypes'));
     }
@@ -43,7 +41,7 @@ class CreditedTransactionController extends Controller
     {
         CreditedTransaction::create([
             'amount'                => $request->amount ,
-            'transactionType_id'   =>$request->transactionType_id
+            'transactionType_name'   =>$request->transactionType_name
         ]);
         return back()->with('Success','تم إضافة المعاملة بنجاح');
     }

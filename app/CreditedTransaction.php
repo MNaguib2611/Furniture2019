@@ -13,7 +13,7 @@ class CreditedTransaction extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable = ['amount','transactionType_id'];
+    protected $fillable = ['amount','transactionType_name'];
 
 
 

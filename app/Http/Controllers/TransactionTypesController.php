@@ -14,7 +14,8 @@ class TransactionTypesController extends Controller
      */
     public function index()
     {
-        //
+        $transactionTypes = TransactionTypes::all();
+        return view('transaction-types',compact('transactionTypes'));
     }
 
     /**

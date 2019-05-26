@@ -13,9 +13,9 @@ class DebitedTransaction extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = ['amount','transactionType_name'];
 
-    public function transactionType()
-    {
-        // return $this->hasOne('App\TransactionTypes', 'id');
-        return $this->belongsTo(TransactionTypes::class,'id');
-    }
+    // public function transactionType()
+    // {
+    //     // return $this->hasOne('App\TransactionTypes', 'id');
+    //     return $this->belongsTo(TransactionTypes::class,'id');
+    // }
 }

@@ -7,7 +7,7 @@
     <title>Furniture</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="{{url('css/main.css')}}">
-    <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}"> --}}
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
