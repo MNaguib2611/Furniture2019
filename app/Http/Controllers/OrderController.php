@@ -20,7 +20,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders=Order::paginate(10);
+        $orders=Order::latest()->paginate(10);
+        // dd($orders);
         $customers = Customer::all();
         return view('orders',compact('orders','customers'));
 
@@ -99,7 +100,8 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->update($request->all());
+        return back()->with('OrderSuccess','تم تعديل الطلب بنجاح');
     }
 
     /**
@@ -113,7 +115,7 @@ class OrderController extends Controller
         //
     }
 
-    public function offerProducts(Request $request)
+    public function orderProducts(Request $request)
     {
 
         $validator = Validator::make($request->all(), [

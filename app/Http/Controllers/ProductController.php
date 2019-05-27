@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=Product::where('inStock',1)->paginate(10);
+        $products=Product::where('inStock',1)->latest()->paginate(10);
         return view('products',compact('products'));
     }
 

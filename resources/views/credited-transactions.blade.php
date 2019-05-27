@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <div class="col-lg-6" style="margin:0 auto;">
+        <div class="col-lg-6" style="margin:0 auto;margin-top:50px;">
                 <h1  class="main-h1 btn btn-lg btn-success"> واردات</h1>
             </div>
             <ul class="nav justify-content-center">
@@ -39,12 +39,8 @@
         @if (count($creditedTransactions)>0)
             @foreach ( $creditedTransactions as  $creditedTransaction)
             <tr
-            @if ($creditedTransaction->transactionType_name == 'بنك') style='background-color:#90EE90;'
-            @elseif ($creditedTransaction->transactionType_name == 'عميل') style='background-color:#add8e9;'
-            @elseif ($creditedTransaction->transactionType_name == 'مورد') style='background-color:#ffb6c1;'
-            @elseif ($creditedTransaction->transactionType_name == 'مرافق') style='background-color:#ffa500;'
-            @endif
-           >
+               style="{{'background-color:'.$creditedTransaction->transactionType_color}}"
+            >
                     <td>{{$creditedTransaction->id}}</td>
                     <td>{{$creditedTransaction->amount}}</td>
                     <td>{{$creditedTransaction->transactionType_name}}</td>
@@ -54,6 +50,10 @@
                     </td>
                 </tr>
             @endforeach
+            <tr>
+                <th>المبلغ الكلي</th>
+                <th>{{$totalAmount}}</th>
+            </tr>
         @endif
 
     </table>
@@ -83,10 +83,10 @@
             @csrf
             <label for="amount"></label>
             <input id="amount" name="amount" type="text" placeholder="المبلغ" required>
-            <select class="browser-default custom-select col-lg-10" name="transactionType_name" required>
+            <select class="browser-default custom-select col-lg-10" name="transactionType_id" required>
                 <option class="placeholder" value=""> نوع المعاملة</option>
                 @foreach ($transactionTypes as $transactionTypes)
-            <option style="padding:5px 25px;"  value="{{$transactionTypes->name}}">
+            <option style="padding:5px 25px;"  value="{{$transactionTypes->id}}">
                <span>{{$transactionTypes->name}}</span>
             </option>
                 @endforeach

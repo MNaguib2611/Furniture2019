@@ -12,7 +12,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-        <div class="col-lg-6" style="margin:0 auto;">
+        <div class="col-lg-6" style="margin:0 auto;margin-top:50px;">
                 <h1  class="main-h1 btn btn-lg btn-warning">المعاملات النقدية</h1>
             </div>
             <ul class="nav justify-content-center">
@@ -41,7 +41,7 @@
     </div>
 
     <div class="col-6 containers-div">
-        <a href="{{url('/transaction-types')}}" class="btn btn-lg btn-success">انواع المعاملات</a>
+        <a href="{{url('/transaction-types')}}" class="btn btn-lg btn-info">انواع المعاملات</a>
     </div>
 
   </div>

@@ -356,6 +356,8 @@ html {
       background: #c2bab6;
       margin-top:50px;
       padding-top:50px;
+     position: static;
+     bottom: 0px;
   }
 
   .createEditElements div{

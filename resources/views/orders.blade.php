@@ -13,9 +13,9 @@
 </head>
 <body>
 
-        <div class="col-lg-6" style="margin:0 auto;">
+        <div class="col-lg-6" style="margin:0 auto;margin-top:50px;">
                 <h1  class="main-h1 btn btn-lg btn-primary">الطلبات</h1>
-            </div>
+         </div>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a href="{{url('/customers')}}" class="btn btn-lg btn-danger">العملاء</a>

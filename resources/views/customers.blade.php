@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <div class="col-lg-6" style="margin:0 auto;">
+    <div class="col-lg-6" style="margin:0 auto;margin-top:50px;">
         <h1  class="main-h1 btn btn-lg btn-danger">العملاء</h1>
     </div>
     <ul class="nav justify-content-center">
@@ -36,7 +36,7 @@
     <table class="table tabel-hover" style="margin-top:45px;" dir="rtl">
         <tr><th  width="20%">ID</th><th>الاسم</th><th>التليفون</th><th>البريد الإلكتروني</th><th>العنوان</th><th>&nbsp;</th></tr>
         @foreach ($customers as $customer)
-    <tr><td>{{$customer->id}}</td><td><a href="{{url('customers/'.$customer->id)}}">{{$customer->name}}</a></td><td>{{$customer->phone}}</td><td>{{$customer->email}} </td><td>{{$customer->address}}</td><td>&nbsp;</td></tr>
+    <tr><td>{{$customer->id}}</td><td><a href="{{url('customers/'.$customer->id)}}">{{$customer->name}}</a></td><td>{{$customer->phone}}</td><td>{{$customer->email}} </td><td>{{$customer->address}}</td><td><a href="{{url('customer/delete').'/'.$customer->id}}" class="btn btn-sm  btn-danger">X</a></td></tr>
         @endforeach
         <tr>
         <form action="{{url('customers')}}" method="post">
@@ -85,22 +85,5 @@
                 </ul>
             </div>
         @endif
-        {{-- <div class="col-6 col-offset-3">
-            <form action="{{url('customers')}}" method="post">
-                @csrf
-                <label for="customer_name"></label>
-                <input name="customer_name" id="customer_name" type="text" placeholder="اسم العميل" required>
-                <label for="phone"></label>
-                <input name="phone" id="phone" type="text" placeholder="الهاتف " required >
-                <label for="customer_email"></label>
-                <input name="customer_email" id="customer_email" type="email" placeholder="(البريد الإلكتروني (إختياري">
-                <label for="customer_address"></label>
-                <input  type="text" name="customer_address" id="customer_address" placeholder="العنوان" required>
-                <br>
-                <input type="submit" class="btn btn-danger" value="إضافة عميل جديد">
-            </form>
-        </div>
-    </div> --}}
-
 </body>
 </html>

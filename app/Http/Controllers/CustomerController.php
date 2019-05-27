@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\Customer;
 use Validator;
+use App\OrderProduct;
 use Illuminate\Http\Request;
+use App\Product;
 
 class CustomerController extends Controller
 {
@@ -16,7 +18,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers=Customer::paginate(10);
+        $customers=Customer::latest()->paginate(10);
         return view('customers',compact('customers'));
     }
 
@@ -105,5 +107,19 @@ class CustomerController extends Controller
         //
     }
 
+    public function removeCustomer($id)
+    {
+        Customer::where('id',$id)->delete();
+        $orders = Order::where('customer_id',$id)->get();
+        foreach ( $orders as  $order) {
+            $orderProducts = OrderProduct::where('order_id',$order->id)->get();
+            foreach ( $orderProducts as  $orderProduct) {
+                Product::where('id',$orderProduct->product_id)->update(['inStock'=>1]);
+            }
+            OrderProduct::where('order_id',$order->id)->delete();
+        }
+        Order::where('customer_id',$id)->delete();
 
+       return back()->with('Success','تم ازالة العميل بنجاح');
+    }
 }

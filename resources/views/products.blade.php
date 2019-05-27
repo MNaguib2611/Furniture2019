@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <div class="col-lg-6" style="margin:0 auto;">
+        <div class="col-lg-6" style="margin:0 auto;margin-top:50px;">
                 <h1  class="main-h1 btn btn-lg btn-danger">العملاء</h1>
             </div>
             <ul class="nav justify-content-center">

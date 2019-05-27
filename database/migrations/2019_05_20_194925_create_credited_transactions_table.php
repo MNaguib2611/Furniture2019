@@ -18,7 +18,7 @@ class CreateCreditedTransactionsTable extends Migration
             $table->integer('amount');
 
             $table ->string("transactionType_name");
-            $table ->string("transactionType_color")->nullable();
+            $table ->string("transactionType_color")->default('#add8e9');
             $table->timestamps();
             $table->softDeletes();
         });

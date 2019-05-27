@@ -13,17 +13,23 @@
 </head>
 <body>
 
-    <div class="col-6 col-offset-3">
-            <h1  class="main-h1 btn btn-lg btn-success " style="position:relative;left:50%;" >المنتجات</h1>
-            <div style="position:relative;left:65%;right:65%;">
-                            <a href="{{url('/customers')}}" class="btn btn-lg btn-danger">العملاء</a>
-                            <a href="{{url('/products')}}" class="btn btn-lg btn-success">المنتجات</a>
-                            <a href="{{url('/orders')}}" class="btn btn-lg btn-primary">الطلبات</a>
-                            <a href="{{url('/transactions')}}" class="btn btn-lg btn-warning">المعاملات النقدية</a>
+        <div class="col-lg-6" style="margin:0 auto;margin-top:50px;">
+                <h1  class="main-h1 btn btn-lg btn-danger">العملاء</h1>
             </div>
-
-    </div>
-
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="{{url('/customers')}}" class="btn btn-lg btn-danger">العملاء</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('/products')}}" class="btn btn-lg btn-success">المنتجات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('/orders')}}" class="btn btn-lg btn-primary">الطلبات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('/transactions')}}" class="btn btn-lg btn-warning">المعاملات النقدية</a>
+                </li>
+            </ul>
 <div >
 
   <div id="linksContent" class="row">

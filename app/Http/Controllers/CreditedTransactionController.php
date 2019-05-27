@@ -15,10 +15,14 @@ class CreditedTransactionController extends Controller
      */
     public function index()
     {
-
-        $creditedTransactions = CreditedTransaction::paginate(10);
         $transactionTypes    = TransactionTypes ::all();
-        return view('credited-transactions',compact('creditedTransactions','transactionTypes'));
+        $creditedTransactions = CreditedTransaction::latest()->paginate(10);
+
+        $totalAmount =0;
+        foreach ( $creditedTransactions as $creditedTransaction) {
+                $totalAmount +=(int)$creditedTransaction->amount;
+        }
+        return view('credited-transactions',compact('creditedTransactions','transactionTypes','totalAmount'));
     }
 
     /**
@@ -39,9 +43,14 @@ class CreditedTransactionController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+        $transactionType = TransactionTypes::where('id',$request->transactionType_id)->first();
+        // dd( $transactionType);
+        // dd($transactionType);
         CreditedTransaction::create([
             'amount'                => $request->amount ,
-            'transactionType_name'   =>$request->transactionType_name
+            'transactionType_name'   =>$transactionType->name,
+            'transactionType_color' =>$transactionType->color,
         ]);
         return back()->with('Success','تم إضافة المعاملة بنجاح');
     }

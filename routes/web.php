@@ -15,6 +15,7 @@ Route::group(['middleware' => ['loggedInMiddleware']], function () {
     Route::get('/dashboard','HomeController@dashboard' );
     Route::get('/transactions','HomeController@transactions' );
     Route::resource('customers', 'CustomerController');
+    Route::get('customer/delete/{id}','CustomerController@removeCustomer');
 
 
 
@@ -29,8 +30,10 @@ Route::group(['middleware' => ['loggedInMiddleware']], function () {
     Route::resource('products', 'ProductController');
     Route::get('products/delete/{id}','ProductController@removeProduct');
     Route::resource('orders', 'OrderController');
-    Route::post('offerProducts', 'OrderController@offerProducts');
+    Route::post('orderProducts', 'OrderController@orderProducts');
+    Route::get('orderProducts/delete/{id}', 'OrderProductController@removeOrderProduct');
 
+    Route::resource('transaction-types', 'TransactionTypesController');
 
 });
 

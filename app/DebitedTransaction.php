@@ -11,7 +11,7 @@ class DebitedTransaction extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable = ['amount','transactionType_name'];
+    protected $fillable = ['amount','transactionType_name','transactionType_color'];
 
     // public function transactionType()
     // {

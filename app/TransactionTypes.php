@@ -12,7 +12,7 @@ class TransactionTypes extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable = ['name'];
+    protected $fillable = ['name','color'];
 
 
 
