@@ -11,9 +11,9 @@ class TransactionTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        TransactionTypes::create(['name' => "بنك"]);
-        TransactionTypes::create(['name' => "عميل"]);
-        TransactionTypes::create(['name' => "مورد"]);
-        TransactionTypes::create(['name' => "مرافق"]);
+        TransactionTypes::create(['name' => "بنك" , 'color' =>'#90EE90']);
+        TransactionTypes::create(['name' => "عميل", 'color' =>'#add8e9']);
+        TransactionTypes::create(['name' => "مورد", 'color' =>'#ffb6c1']);
+        TransactionTypes::create(['name' => "مرافق", 'color' =>'#ffa500']);
     }
 }

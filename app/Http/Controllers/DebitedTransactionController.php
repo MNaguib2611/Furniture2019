@@ -94,4 +94,9 @@ class DebitedTransactionController extends Controller
     {
         //
     }
+    public function removeDebitedTransaction($id)
+    {
+        DebitedTransaction::where('id',$id)->delete();
+       return back()->with('Success','تم ازالة المعاملة بنجاح');
+    }
 }

@@ -90,4 +90,9 @@ class CreditedTransactionController extends Controller
     {
         //
     }
+    public function removeCreditedTransaction($id)
+    {
+        CreditedTransaction::where('id',$id)->delete();
+       return back()->with('Success','تم ازالة المعاملة بنجاح');
+    }
 }

@@ -19,7 +19,9 @@ Route::group(['middleware' => ['loggedInMiddleware']], function () {
 
 
     Route::resource('debited-transactions', 'DebitedTransactionController');
+    Route::get('debited-transaction/delete/{id}','DebitedTransactionController@removeDebitedTransaction');
     Route::resource('credited-transactions', 'CreditedTransactionController');
+    Route::get('credited-transaction/delete/{id}','CreditedTransactionController@removeCreditedTransaction');
 
 
 

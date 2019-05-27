@@ -12,7 +12,23 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
+        <div class="col-lg-6" style="margin:0 auto;">
+                <h1  class="main-h1 btn btn-lg btn-warning">المعاملات النقدية</h1>
+            </div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="{{url('/customers')}}" class="btn btn-lg btn-danger">العملاء</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('/products')}}" class="btn btn-lg btn-success">المنتجات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('/orders')}}" class="btn btn-lg btn-primary">الطلبات</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('/transactions')}}" class="btn btn-lg btn-warning">المعاملات النقدية</a>
+                </li>
+            </ul>
 
 
 <div class="wrapper fadeInDown">

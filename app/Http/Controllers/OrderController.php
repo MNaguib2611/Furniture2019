@@ -47,7 +47,8 @@ class OrderController extends Controller
 
         $newCreditedTransaction = CreditedTransaction::create([
             'amount' => 0 ,
-            'transactionType_name' => 'عميل'
+            'transactionType_name' => 'عميل',
+            'transactionType_color' => '#add8e9'
         ]);
             // dd($newCreditedTransaction->id);
         $newOrder = Order::create([
